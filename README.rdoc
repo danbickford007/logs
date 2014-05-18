@@ -4,6 +4,6 @@ Gemfile
   mount Logs::Engine, at: "/logs"
 
 
-rake logs:install:migrations
+  rake logs:install:migrations
 
 This project rocks and uses MIT-LICENSE.
