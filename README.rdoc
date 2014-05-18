@@ -1,6 +1,8 @@
 = Logs
 
-Monitor exceptions by navigating to '/logs'.
+** Early Alpha **
+
+Monitor exceptions by navigating to /logs.
 
 
 Gemfile
@@ -10,11 +12,15 @@ Gemfile
   rake logs:install:migrations
 
 
-Default username and password is
+Default username and password to access /logs is
 
 USERNAME:  test
 PASSWORD:  1234
 
-To change, edit config/initializers/auth.rb
+To change credentials to access /logs, create file config/logs.yml.  It should look something like this...
+  
+  production:
+    username: 'test'
+    password: 'here'
 
 This project rocks and uses MIT-LICENSE.

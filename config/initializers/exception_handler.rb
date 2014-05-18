@@ -10,7 +10,10 @@ end
 taken = []
 ActiveSupport::Notifications.subscribe 'action_dispatch.request' do |name, start, finish, id, payload|
     begin
-      Rails.logger.debug payload[:request].methods
+      # Rails.logger.debug payload[:request].inspect
+      # Rails.logger.debug payload[:request].query_string
+      # Rails.logger.debug payload[:request].remote_addr
+      # Rails.logger.debug payload[:request].remote_host
       if !taken.include? "#{name}-#{start}-#{id}"
         Logs::RequestData.create(host: payload[:request].host_with_port, method: payload[:request].method, 
                                  port: payload[:request].server_port, user_agent: payload[:request].user_agent)  
