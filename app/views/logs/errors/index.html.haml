@@ -1,0 +1,20 @@
+%h1 Listing errors
+%table{class: 'table table-striped'}
+  %thead
+    %tr
+      %th Content
+      %th Created
+      %th
+      %th
+      %th
+  %tbody
+    - @errors.each do |error|
+      %tr
+        %td= error.content
+        %td= error.created_at.strftime('%m/%d/%y %H:%M:%S')
+        %td= link_to 'Show', error
+        %td= link_to 'Edit', edit_error_path(error)
+        %td= link_to 'Destroy', error, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= paginate @errors
+= link_to 'New Error', new_error_path

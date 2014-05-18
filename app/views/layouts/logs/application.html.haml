@@ -1,0 +1,38 @@
+!!!
+= bootstrap_javascript_include_tag :default
+= bootstrap_stylesheet_include_tag :default
+%html
+  %head
+    %title Logs
+    = stylesheet_link_tag    "logs/application", media: "all"
+    = javascript_include_tag "logs/application"
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-default{role: "navigation"}
+      .navbar-header
+        %a.navbar-brand{href: "/logs"} Logs
+      %div
+        %ul.nav.navbar-nav
+          %li.active
+            %a{href: "#"} Errors
+          %li
+            %a{href: "#"} Options
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              Java
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %a{href: "#"} jmeter
+              %li
+                %a{href: "#"} EJB
+              %li
+                %a{href: "#"} Jasper Report
+              %li.divider
+              %li
+                %a{href: "#"} Separated link
+              %li.divider
+              %li
+                %a{href: "#"} One more separated link
+    %hr
+    = yield
