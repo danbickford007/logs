@@ -13,17 +13,17 @@
         %a.navbar-brand{href: "/logs"} Logs
       %div
         %ul.nav.navbar-nav
-          %li.active
-            %a{href: "#"} Errors
-          %li
-            %a{href: "#"} Options
+          %li{class: active('logs/errors')}
+            %a{href: "/logs/errors"} Errors
+          %li{class: active('logs/request_data')}
+            = link_to 'Request Data', request_data_path
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              Java
+              Options
               %b.caret
             %ul.dropdown-menu
               %li
-                %a{href: "#"} jmeter
+                %a{href: "#"} Creds
               %li
                 %a{href: "#"} EJB
               %li

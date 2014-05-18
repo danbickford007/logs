@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Method:
+  = @request_datum.method
+%p
+  %strong Port:
+  = @request_datum.port
+%p
+  %strong Host:
+  = @request_datum.host
+%p
+  %strong User agent:
+  = @request_datum.user_agent
+= link_to 'Edit', edit_request_datum_path(@request_datum)
+|
+\#{link_to 'Back', request_data_path}

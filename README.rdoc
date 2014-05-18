@@ -9,4 +9,12 @@ Gemfile
 
   rake logs:install:migrations
 
+
+Default username and password is
+
+USERNAME:  test
+PASSWORD:  1234
+
+To change, edit config/initializers/auth.rb
+
 This project rocks and uses MIT-LICENSE.

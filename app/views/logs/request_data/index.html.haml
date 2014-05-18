@@ -1,0 +1,23 @@
+%h1 Listing request_data
+%table{class: 'table table-striped'}
+  %thead
+    %tr
+      %th Created
+      %th Method
+      %th Port
+      %th Host
+      %th User agent
+      %th
+      %th
+  %tbody
+    - @request_data.each do |request_datum|
+      %tr
+        %td= request_datum.created_at.strftime('%m/%d/%y %H:%M:%S')
+        %td= request_datum.method
+        %td= request_datum.port
+        %td= request_datum.host
+        %td= request_datum.user_agent
+        %td= link_to 'Show', request_datum
+        %td= link_to 'Destroy', request_datum, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= paginate @request_data

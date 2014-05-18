@@ -1,4 +1,7 @@
 Logs::Engine.routes.draw do
-  resources :errors
+
+  resources :request_data
+  resources :errors do
+  end
   root to: "errors#index"
 end

@@ -1,0 +1,7 @@
+development:
+  username: 'test'
+  password: '1234'
+
+production:
+  username: 'random'
+  password: 'password1'

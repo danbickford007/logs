@@ -1,0 +1,27 @@
+= form_for(@request_datum) do |f|
+  - if @request_datum.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@request_datum.errors.count, "error")
+        prohibited this request_datum from being saved:
+      %ul
+        - @request_datum.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :method
+    %br/
+    = f.text_field :method
+  .field
+    = f.label :port
+    %br/
+    = f.text_field :port
+  .field
+    = f.label :host
+    %br/
+    = f.text_field :host
+  .field
+    = f.label :user_agent
+    %br/
+    = f.text_field :user_agent
+  .actions
+    = f.submit

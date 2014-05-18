@@ -3,5 +3,6 @@
   %strong Content:
   = @error.content
 = link_to 'Edit', edit_error_path(@error)
+= link_to 'Request Data', error_request_data_path(@error)
 |
 \#{link_to 'Back', errors_path}

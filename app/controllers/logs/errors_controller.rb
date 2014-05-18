@@ -3,7 +3,6 @@ require_dependency "logs/application_controller"
 module Logs
   class ErrorsController < ApplicationController
     before_action :set_error, only: [:show, :edit, :update, :destroy]
-
     # GET /errors
     def index
       @errors = Error.order('created_at DESC').page(params[:page]).per(15)
@@ -58,5 +57,6 @@ module Logs
       def error_params
         params.require(:error).permit(:content)
       end
+
   end
 end
