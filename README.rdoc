@@ -1,5 +1,8 @@
 = Logs
 
+Monitor exceptions by navigating to '/logs'.
+
+
 Gemfile
   mount Logs::Engine, at: "/logs"
 
