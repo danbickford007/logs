@@ -6,13 +6,14 @@ ActiveSupport::Notifications.subscribe 'process_action.action_controller' do |na
   end
 
 end
-count = 0
 ActiveSupport::Notifications.subscribe 'action_dispatch.request' do |name, start, finish, id, payload|
-    count += 1
-    Rails.logger.debug count 
-    if count % 9 == 0
+    begin
       Rails.logger.debug payload[:request].methods
       Logs::RequestData.create(host: payload[:request].host_with_port, method: payload[:request].method, 
                                port: payload[:request].server_port, user_agent: payload[:request].user_agent)  
+    rescue => e
+      Rails.logger.debug e
+    ensure
+      ActiveRecord::Base.clear_active_connections!
     end
 end
